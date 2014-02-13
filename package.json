@@ -1,0 +1,15 @@
+{
+  "name": "MOLEPPMDataFeed",
+  "version": "0.2.0",
+  "description": "node.js module for extracting live PPM datafeed for UK TOC's. Make sure you reister with http://datafeeds.networkrail.co.uk for username and password (enter in js file)",
+  "main": "ppmdata.js",
+  "dependencies": {
+    	"stomp-client": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "MOLEDesign",
+  "license": "BSD"
+}
