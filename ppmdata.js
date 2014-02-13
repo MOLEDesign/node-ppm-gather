@@ -36,8 +36,6 @@ client.connect(function(sessionId) {
 				client.disconnect(function() {
 					console.log('Disconnected');
 				});
-				// Add data to MYSQL
-				console.log('Adding data to MYSQL');
 			}
 		}); 
     });
