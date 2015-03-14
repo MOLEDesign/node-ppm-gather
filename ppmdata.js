@@ -21,6 +21,8 @@ var password = secure.password;
 //});
 
 
+setInterval(function(){
+
 client = new StompClient(datafeed, 61618, username, password, '1.0');
 
 client.connect(function(sessionId) {
@@ -41,3 +43,5 @@ client.connect(function(sessionId) {
     });
 	// end subscription	
 });
+
+console.log("Start Again"); }, 120*1000);
