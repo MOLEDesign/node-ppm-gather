@@ -3,7 +3,7 @@ var 	fs = require('fs'),
 	secure = require('./secure.js');
 	
 	
-var topic = 'RTPPM_ALL';
+var topic = 'TSR_WEST_ROUTE';
 var datafeed = 'datafeeds.networkrail.co.uk';
 var destination = '/topic/' + topic;
 
@@ -21,8 +21,6 @@ var password = secure.password;
 //});
 
 
-setInterval(function(){
-
 client = new StompClient(datafeed, 61618, username, password, '1.0');
 
 client.connect(function(sessionId) {
@@ -30,7 +28,7 @@ client.connect(function(sessionId) {
 
 	// Subscribe and collect message
     client.subscribe(destination, function(body, headers) {
-        fs.writeFile("/home/ec2-user/datadisplay/data/ppm.json", body, function(err) {
+        fs.writeFile("/home/ec2-user/datadisplay/data/tsr.json", body, function(err) {
 			if(err) {
 				console.log(err);
 			} else {
@@ -39,9 +37,8 @@ client.connect(function(sessionId) {
 					console.log('Disconnected');
 				});
 			}
-		});
+		}); 
     });
-	// end subscription
+	// end subscription	
 });
 
-console.log("Start Again"); }, 30*1000);
